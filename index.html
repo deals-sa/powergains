@@ -153,28 +153,61 @@
       background: #fff;
     }
 
-    /* badge “27% OFF” */
-    .badge-off{
+    /* badges Black November + discount */
+    .badge-stack{
       position: absolute;
       left: 12px;
       top: 12px;
-      background: var(--blue);
-      color: #fff;
-      border: 1px solid var(--blue);
-      font-weight: 700;
-      font-size: 13px;
-      line-height: 1.05;
-      padding: 10px 10px;
-      border-radius: 6px;
-      text-align: center;
-      width: 58px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 2;
     }
-    .badge-off span{
-      display: block;
+
+    .badge-bn,
+    .badge-off{
+      width: 76px;
+      height: 76px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      font-weight: 800;
+      line-height: 1.15;
+      border: 0;
+    }
+
+    .badge-bn{
+      background: #111;
+    }
+    .badge-bn .bn-top{
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: .3px;
+    }
+    .badge-bn .bn-bottom{
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      margin-top: 1px;
+    }
+
+    .badge-off{
+      background: var(--blue);
+    }
+    .badge-off .off-num{
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -.3px;
+    }
+    .badge-off .off-label{
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: .2px;
-      margin-top: 2px;
+      letter-spacing: .3px;
+      margin-top: 1px;
     }
 
     /* botão expand (canto superior direito sobre imagem) */
@@ -1744,9 +1777,15 @@
       <div class="hero__imgbox">
         <img id="productImage" class="hero__img" src="images/Suplementos fitness USN e NutriTech (1).png" alt="Power Gains 5-in-1 Kit">
 
-        <div class="badge-off" aria-label="Discount badge">
-          74%
-          <span>OFF</span>
+        <div class="badge-stack" aria-label="Promotion badges">
+          <div class="badge-bn">
+            <span class="bn-top">Black</span>
+            <span class="bn-bottom">November</span>
+          </div>
+          <div class="badge-off">
+            <span class="off-num">74%</span>
+            <span class="off-label">OFF</span>
+          </div>
         </div>
 
         <button class="btn-expand" id="expandBtn" aria-label="Expand image">
